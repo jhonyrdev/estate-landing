@@ -1,0 +1,57 @@
+---
+import "@assets/css/global.css";
+import Footer from "@/components/footer.astro";
+import HeadNav from "@/components/headNav.astro";
+import Hero from "@/components/hero.astro";
+import Layout from "@/layouts/Layout.astro";
+import Popular from "@/section/popular.astro";
+import Services from "@/section/services.astro";
+import Process from "@/section/process.astro";
+import Contact from "@/section/contact.astro";
+import StatsBlock from "@/components/statsBlock.astro";
+import AboutUs from "@/section/about_us.astro";
+import Cta from "@/section/cta.astro";
+---
+
+<Layout>
+  <HeadNav />
+
+  <div id="inicio">
+    <Hero />
+  </div>
+
+  <main class="flex-1">
+    <!-- Stats Block Mobile -->
+    <div class="block md:hidden pt-4">
+      <StatsBlock />
+    </div>
+
+    <!-- Services Section -->
+    <Services />
+
+    <!-- About Section -->
+    <AboutUs />
+
+    <!-- Properties Section -->
+    <div id="propiedades">
+      <Popular />
+    </div>
+
+    <!-- Process Section -->
+    <Process />
+
+    <!-- CTA Section -->
+    <Cta />
+
+    <!-- Contact Section -->
+    <Contact />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .sectionCTA {
+    background-image: url("../assets/img/bannerCTA.jpg");
+  }
+</style>

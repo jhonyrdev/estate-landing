@@ -1,0 +1,210 @@
+---
+
+---
+
+<header
+  id="main-header"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
+>
+  <div class="container-personalizado mx-auto px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-2 group">
+        <div class="flex flex-col">
+          <span class="text-2xl font-bold text-gray-900 leading-none"
+            >Lafayette</span
+          >
+          <span class="text-sm text-sky-600 font-medium">Invest</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#propiedades" class="nav-link">Propiedades</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menu-btn"
+        class="md:hidden text-gray-700 hover:text-indigo-600 focus:outline-none transition-colors"
+        aria-label="Toggle menu"
+      >
+        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+        <i id="close-icon" class="fa-solid fa-xmark text-2xl hidden"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden bg-white/95 backdrop-blur-lg border-t border-gray-200"
+  >
+    <nav class="max-w-7xl mx-auto px-4 py-4 space-y-2">
+      <a href="#inicio" class="block py-3 px-4 nav-link-mobile">Inicio</a>
+      <a href="#servicios" class="block py-3 px-4 nav-link-mobile">Servicios</a>
+      <a href="#propiedades" class="block py-3 px-4 nav-link-mobile"
+        >Propiedades</a
+      >
+      <a href="#nosotros" class="block py-3 px-4 nav-link-mobile">Nosotros</a>
+      <a href="#contacto" class="block py-3 px-4 nav-link-mobile">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Header scroll effect y ocultar header al hacer scroll
+  const header = document.getElementById("main-header");
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  let hideTimeout: NodeJS.Timeout | null = null;
+
+  function handleScroll() {
+    const currentScrollY = window.scrollY;
+    // Efecto de fondo y blur
+    if (currentScrollY > 50) {
+      header?.classList.add("bg-white/80", "backdrop-blur-lg", "shadow-lg");
+    } else {
+      header?.classList.remove("bg-white/80", "backdrop-blur-lg", "shadow-lg");
+    }
+    // Ocultar header al hacer scroll hacia abajo, mostrar al subir o en top
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      header?.classList.add("-translate-y-full");
+    } else {
+      header?.classList.remove("-translate-y-full");
+    }
+    lastScrollY = currentScrollY;
+    // Si el menú móvil está abierto, ciérralo al hacer scroll
+    if (!mobileMenu?.classList.contains("hidden")) {
+      mobileMenu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      header?.classList.remove("bg-white");
+    }
+    // Limpiar timeout de mostrar header
+    if (hideTimeout) clearTimeout(hideTimeout);
+    // Mostrar header después de 200ms sin scroll
+    hideTimeout = setTimeout(() => {
+      header?.classList.remove("-translate-y-full");
+    }, 200);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  menuBtn?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.toggle("hidden") === false;
+    menuIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+    // Si se abre el menú móvil, fondo blanco sólido
+    if (isOpen) {
+      header?.classList.add("bg-white");
+    } else {
+      header?.classList.remove("bg-white");
+    }
+  });
+
+  // Cerrar menú móvil al hacer click fuera
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu) return;
+
+    if (!mobileMenu.classList.contains("hidden")) {
+      const targetNode = e.target instanceof Node ? e.target : null;
+      const isMenu = targetNode && mobileMenu.contains(targetNode);
+      const isBtn = targetNode && menuBtn && menuBtn.contains(targetNode);
+
+      if (!isMenu && !isBtn) {
+        mobileMenu.classList.add("hidden");
+        menuIcon?.classList.remove("hidden");
+        closeIcon?.classList.add("hidden");
+        header?.classList.remove("bg-white");
+      }
+    }
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = document.querySelectorAll(".nav-link-mobile");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      header?.classList.remove("bg-white");
+    });
+  });
+</script>
+
+<style>
+  .nav-link {
+    display: inline-block;
+    color: #374151;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: linear-gradient(90deg, #0bb7f5, #0693d9);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #0693d9;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(245, 158, 11, 0.35);
+  }
+
+  .nav-link-mobile {
+    color: #374151;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 0.5rem;
+  }
+
+  .nav-link-mobile:hover {
+    background-color: #f3f4f6;
+    color: #d97706;
+  }
+
+  /* Fix para iconos Font Awesome */
+  #menu-icon,
+  #close-icon {
+    display: inline-block;
+  }
+
+  #menu-icon.hidden,
+  #close-icon.hidden {
+    display: none !important;
+  }
+</style>

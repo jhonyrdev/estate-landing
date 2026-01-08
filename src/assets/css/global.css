@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 426px;   
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+@media (min-width: 468px) {
+  .container-personalizado {
+    max-width: 650px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-personalizado {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container-personalizado {
+    max-width: 1010px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .container-personalizado {
+    max-width: 1260px;
+  }
+}
+
+@media (min-width: 1537px) {
+  .container-personalizado {
+    max-width: 1500px;
+  }
+}

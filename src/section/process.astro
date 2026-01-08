@@ -1,0 +1,110 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Consulta Inicial",
+    description: "Agenda una llamada con el equipo.",
+    icon: "fa-solid fa-comments",
+    color: "from-sky-500 to-blue-600"
+  },
+  {
+    number: "02",
+    title: "Análisis Personalizado",
+    description: "Estrategia de inversión personalizada para ti.",
+    icon: "fa-solid fa-chart-line",
+    color: "from-indigo-500 to-purple-600"
+  },
+  {
+    number: "03",
+    title: "Selección de Propiedades",
+    description: "Te mostramos opciones alineadas a tu perfil.",
+    icon: "fa-solid fa-building",
+    color: "from-sky-500 to-cyan-600"
+  },
+  {
+    number: "04",
+    title: "Inversión y Cierre",
+    description: "Acompañamiento legal y financiero al cierre.",
+    icon: "fa-solid fa-circle-check",
+    color: "from-emerald-500 to-green-600"
+  }
+];
+---
+
+<section id="proceso" class="py-20 bg-white relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-72 h-72 bg-amber-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
+  <div class="absolute bottom-0 left-0 w-72 h-72 bg-blue-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
+
+  <div class="container-personalizado mx-auto px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold mb-4">
+        Nuestro Proceso
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Cómo <span class="text-sky-600">funciona</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Un proceso simple y transparente diseñado para maximizar tu éxito
+      </p>
+    </div>
+
+    <div class="relative">
+      <div class="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-200 via-indigo-200 via-cyan-200 to-emerald-200"></div>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {steps.map((step, index) => (
+          <div 
+            class="relative group process-step"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            <!-- Card -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-200 hover:border-sky-300 relative overflow-hidden group-hover:-translate-y-1 h-[300px] flex flex-col justify-center items-center">
+              <div class="absolute inset-0 bg-gradient-to-br from-sky-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="relative z-10 flex flex-col items-center justify-center h-full w-full">
+                <div class="flex items-center justify-center mb-6">
+                  <div class={`relative w-20 h-20 rounded-full bg-gradient-to-br ${step.color} p-0.5 group-hover:scale-110 transition-transform duration-500`}>
+                    <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                      <i class={`${step.icon} text-3xl bg-gradient-to-br ${step.color} bg-clip-text text-transparent`}></i>
+                    </div>
+                  </div>
+                  <div class="absolute -top-3 -right-3 w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg">
+                    {step.number}
+                  </div>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3 text-center w-full">
+                  {step.title}
+                </h3>
+                <p class="text-gray-600 leading-relaxed text-sm text-center w-full">
+                  {step.description}
+                </p>
+              </div>
+              <div class={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${step.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
+            </div>
+            {index < steps.length - 1 && (
+              <div class="hidden lg:flex absolute top-24 -right-4 transform -translate-y-1/2 z-20 items-center justify-center w-8 h-8 bg-white rounded-full shadow-md">
+                <i class="fa-solid fa-arrow-right text-sky-500 text-sm"></i>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-step {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

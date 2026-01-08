@@ -1,0 +1,63 @@
+---
+import StatsBlock from "./statsBlock.astro";
+---
+
+<div class="relative bg-gradient-to-r from-white to-slate-300 overflow-visible">
+  <div class="relative container-personalizado mx-auto px-8 px-4 pt-25 pb-0 md:pb-20 lg:pb-30 overflow-visible">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="z-10">
+        <h1
+          class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+        >
+          Impulsa tus ideas <span class="text-sky-700 font-extrabold">al siguiente nivel</span
+          >
+        </h1>
+
+        <p class="mt-6 text-lg text-gray-600">
+          Diseñamos experiencias digitales modernas, rápidas y pensadas para
+          convertir visitantes en clientes.
+        </p>
+
+        <div class="mt-4 flex gap-4">
+          <a
+            href="#"
+            class="inline-flex items-center justify-center px-6 py-3 text-white bg-sky-700 rounded-lg font-semibold hover:bg-sky-800 transition"
+          >
+            Empieza ahora
+          </a>
+
+          <a
+            href="#"
+            class="inline-flex items-center justify-center px-4 py-3 text-sky-800 font-semibold"
+          >
+            Ver proyectos
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagen sobresaliente por abajo -->
+      <div class="relative z-20 -mb-10 sm:-mb-10 md:-mb-30 lg:-mb-23  overflow-visible">
+        <img
+          src="./imghero.png"
+          alt="Equipo trabajando en ideas digitales"
+          class="relative w-full h-auto object-cover"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="absolute left-1/2 statsblock-bottom w-full -translate-x-1/2 md:block hidden z-20"
+  >
+    <StatsBlock />
+  </div>
+<style>
+  .statsblock-bottom {
+    bottom: -5rem;
+  }
+  @media (min-width: 1024px) {
+    .statsblock-bottom {
+      bottom: -2.5rem;
+    }
+  }
+</style>
+</div>

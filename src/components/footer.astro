@@ -1,0 +1,283 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  company: [
+    { name: "Nosotros", href: "#nosotros" },
+    { name: "Servicios", href: "#servicios" },
+    { name: "Propiedades", href: "#propiedades" },
+    { name: "Blog", href: "#" },
+  ],
+  resources: [
+    { name: "Guía de Inversión", href: "#" },
+    { name: "Calculadora ROI", href: "#" },
+    { name: "Preguntas Frecuentes", href: "#" },
+    { name: "Testimonios", href: "#testimonios" },
+  ],
+  legal: [
+    { name: "Términos y Condiciones", href: "#" },
+    { name: "Política de Privacidad", href: "#" },
+    { name: "Aviso Legal", href: "#" },
+    { name: "Cookies", href: "#" },
+  ],
+};
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="container-personalizado mx-auto px-8 pt-12">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold text-white leading-none"
+              >Lafayette</span
+            >
+            <span class="text-sm text-sky-400 font-medium">Invest</span>
+          </div>
+        </div>
+        <p class="text-gray-400 mb-6 max-w-sm leading-relaxed">
+          Inversión inmobiliaria estratégica y disciplinada. Ayudamos a nuestros
+          clientes a acceder a oportunidades sólidas en bienes raíces.
+        </p>
+
+        <!-- Social Media -->
+        <div class="flex gap-3">
+          <a
+            href="#"
+            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-sky-600 transition-colors"
+          >
+            <i class="fab fa-facebook text-lg"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-sky-600 transition-colors"
+          >
+            <i class="fab fa-instagram text-lg"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-sky-600 transition-colors"
+          >
+            <i class="fab fa-linkedin text-lg"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-sky-600 transition-colors"
+          >
+            <i class="fab fa-twitter text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <button
+          class="accordion-btn w-full text-left flex items-center justify-between lg:cursor-auto lg:pointer-events-none"
+          data-section="company"
+        >
+          <h4 class="text-white font-semibold mb-4 sm:mb-4">Compañía</h4>
+          <span class="flex lg:hidden mb-4">
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </span>
+        </button>
+        <ul
+          class="accordion-content space-y-3 md:!max-h-none md:!overflow-visible"
+        >
+          {
+            footerLinks.company.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="hover:text-sky-400 transition-colors text-sm"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <button
+          class="accordion-btn w-full text-left flex items-center justify-between lg:cursor-auto lg:pointer-events-none"
+          data-section="resources"
+        >
+          <h4 class="text-white font-semibold mb-4 md:mb-4">Recursos</h4>
+          <span class="flex lg:hidden mb-4">
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </span>
+        </button>
+
+        <ul
+          class="accordion-content space-y-3 md:!max-h-none md:!overflow-visible"
+        >
+          {
+            footerLinks.resources.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="hover:text-sky-400 transition-colors text-sm"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <button
+          class="accordion-btn w-full text-left flex items-center justify-between md:cursor-auto lg:pointer-events-none"
+          data-section="legal"
+        >
+          <h4 class="text-white font-semibold mb-4 md:mb-4">Legal</h4>
+          <span class="flex lg:hidden mb-4">
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </span>
+        </button>
+        <ul
+          class="accordion-content space-y-3 md:!max-h-none md:!overflow-visible"
+        >
+          {
+            footerLinks.legal.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="hover:text-sky-400 transition-colors text-sm"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="py-4 border-t border-gray-700">
+    <div class="container-personalizado mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-400">
+        © {currentYear} Lafayette Invest. Todos los derechos reservados.
+      </p>
+      <div class="flex gap-6 text-sm">
+        <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors"
+          >Mapa del sitio</a
+        >
+        <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors"
+          >Accesibilidad</a
+        >
+        <a
+          href="#contacto"
+          class="text-gray-400 hover:text-sky-400 transition-colors">Contacto</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button
+  id="back-to-top"
+  class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all opacity-0 pointer-events-none flex items-center justify-center z-40"
+  aria-label="Volver arriba"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</button>
+
+<script>
+  // Back to top button
+  const backToTopBtn = document.getElementById("back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn?.classList.remove("opacity-0", "pointer-events-none");
+      backToTopBtn?.classList.add("opacity-100", "pointer-events-auto");
+    } else {
+      backToTopBtn?.classList.add("opacity-0", "pointer-events-none");
+      backToTopBtn?.classList.remove("opacity-100", "pointer-events-auto");
+    }
+  });
+
+  backToTopBtn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Accordion footer - solo en mobile
+  const accordionBtns = document.querySelectorAll(".accordion-btn");
+
+  accordionBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Solo funciona en móviles (< 768px)
+      if (window.innerWidth < 768) {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector("i");
+
+        // Colapsar otros acordeones
+        accordionBtns.forEach((otherBtn) => {
+          if (otherBtn !== btn) {
+            const otherContent = otherBtn.nextElementSibling;
+            const otherIcon = otherBtn.querySelector("i");
+            otherContent?.classList.add("collapsed");
+            otherIcon?.classList.remove("rotate-180");
+          }
+        });
+
+        // Toggle actual
+        content?.classList.toggle("collapsed");
+        icon?.classList.toggle("rotate-180");
+      }
+    });
+  });
+
+  // Agregar estilos CSS para el acordeón
+  const style = document.createElement("style");
+  style.textContent = `
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .accordion-content:not(.collapsed) {
+      max-height: 500px;
+      padding-top: 0.75rem;
+      margin-top: 0;
+    }
+    
+    .accordion-content.collapsed {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+    }
+    
+    @media (min-width: 768px) {
+      .accordion-content {
+        max-height: none !important;
+        overflow: visible !important;
+        padding-top: 0.75rem !important;
+        margin: 0 !important;
+      }
+    }
+    
+    .accordion-btn i {
+      transition: transform 0.3s ease;
+    }
+    
+    .accordion-btn i.rotate-180 {
+      transform: rotate(180deg);
+    }
+  `;
+  document.head.appendChild(style);
+</script>
