@@ -73,10 +73,13 @@ const footerLinks = {
         <button
           class="accordion-btn w-full text-left flex items-center justify-between lg:cursor-auto lg:pointer-events-none"
           data-section="company"
+          aria-label="Expandir sección de Compañía"
+          aria-expanded="false"
+          type="button"
         >
           <h4 class="text-white font-semibold">Compañía</h4>
           <span class="flex md:hidden">
-            <i class="fa-solid fa-chevron-down text-sm"></i>
+            <i class="fa-solid fa-chevron-down text-sm" aria-hidden="true"></i>
           </span>
         </button>
         <ul
@@ -101,10 +104,13 @@ const footerLinks = {
         <button
           class="accordion-btn w-full text-left flex items-center justify-between lg:cursor-auto lg:pointer-events-none"
           data-section="resources"
+          aria-label="Expandir sección de Recursos"
+          aria-expanded="false"
+          type="button"
         >
           <h4 class="text-white font-semibold">Recursos</h4>
           <span class="flex md:hidden">
-            <i class="fa-solid fa-chevron-down text-sm"></i>
+            <i class="fa-solid fa-chevron-down text-sm" aria-hidden="true"></i>
           </span>
         </button>
 
@@ -130,10 +136,13 @@ const footerLinks = {
         <button
           class="accordion-btn w-full text-left flex items-center justify-between md:cursor-auto lg:pointer-events-none"
           data-section="legal"
+          aria-label="Expandir sección Legal"
+          aria-expanded="false"
+          type="button"
         >
           <h4 class="text-white font-semibold">Legal</h4>
           <span class="flex md:hidden">
-            <i class="fa-solid fa-chevron-down text-sm"></i>
+            <i class="fa-solid fa-chevron-down text-sm" aria-hidden="true"></i>
           </span>
         </button>
         <ul
@@ -162,7 +171,7 @@ const footerLinks = {
       class="container-personalizado mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4"
     >
       <p class="text-sm text-gray-400">
-        © {currentYear} Lafayette Invest. Todos los derechos reservados.
+        © {currentYear} EliteHome Invest. Todos los derechos reservados.
       </p>
       <div class="flex gap-6 text-sm">
         <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors"

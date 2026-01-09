@@ -2,9 +2,53 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      EliteHome Invest
+    </title>
+    <meta
+      name="description"
+      content="Inversión inmobiliaria estratégica y disciplinada. Accede a oportunidades sólidas en bienes raíces con EliteHome Invest. Propiedades residenciales, comerciales y terrenos de inversión."
+    />
+    <meta
+      name="keywords"
+      content="inversión inmobiliaria, bienes raíces, propiedades, CDMX, Miami, inversión inteligente, ROI inmobiliario"
+    />
+    <meta name="author" content="EliteHome Invest" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://elitehomestate.netlify.app" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://elitehomestate.netlify.app" />
+    <meta
+      property="og:title"
+      content="EliteHome Invest - Inversión Inmobiliaria Estratégica"
+    />
+    <meta
+      property="og:description"
+      content="Ayudamos a nuestros clientes a acceder a oportunidades sólidas en bienes raíces. Inversión inmobiliaria estrategica y disciplinada."
+    />
+    <meta property="og:image" content=https://elitehomestate.netlify.app/og-image.jpg" />
+    <meta property="og:locale" content="es_PE" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://elitehomestate.netlify.app" />
+    <meta
+      name="twitter:title"
+      content="EliteHome Invest - Inversión Inmobiliaria Estratégica"
+    />
+    <meta
+      name="twitter:description"
+      content="Inversión inmobiliaria estratégica y disciplinada. Accede a oportunidades sólidas en bienes raíces."
+    />
+    <meta name="twitter:image" content="https://elitehomestate.netlify.app/og-image.jpg" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -12,9 +56,51 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Elite Home</title>
   </head>
   <body>
+    <!-- Schema.org JSON-LD para SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "EliteHome Invest",
+        "description": "Inversión inmobiliaria estratégica y disciplinada. Ayudamos a nuestros clientes a acceder a oportunidades sólidas en bienes raíces.",
+        "url": "https://elitehomestate.netlify.app",
+        "logo": "https://elitehomestate.netlify.app/logo.png",
+        "image": "https://elitehomestate.netlify.app/og-image.jpg",
+        "telephone": "+51 949-809-184",
+        "email": "contacto@elitehome.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Brasil 1100, Lima, Peru",
+          "addressLocality": "LIMA",
+          "addressRegion": "LIMA",
+          "addressCountry": "PE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "19.4326",
+          "longitude": "-99.1332"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "sameAs": [
+          "https://facebook.com/elitehome",
+          "https://instagram.com/elitehome",
+          "https://linkedin.com/company/elitehome",
+          "https://twitter.com/elitehome"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "127"
+        }
+      }
+    </script>
     <slot />
   </body>
 </html>
