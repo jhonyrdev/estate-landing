@@ -2,17 +2,17 @@
 const contactInfo = [
   {
     icon: "fa-envelope",
-    value: "contacto@lafayetteinvest.com",
-    link: "mailto:contacto@lafayetteinvest.com",
+    value: "contacto@eliteHome.com",
+    link: "mailto:contacto@eliteHome.com",
   },
   {
     icon: "fa-phone",
-    value: "+52 (55) 1234-5678",
-    link: "tel:+525512345678",
+    value: "+51 949809184",
+    link: "tel:+51949809184",
   },
   {
     icon: "fa-location-dot",
-    value: "Av. Paseo de la Reforma 505, CDMX",
+    value: "Av. Brasi 1100, Lima, Peru",
     link: "https://maps.google.com",
   },
   {
@@ -23,7 +23,7 @@ const contactInfo = [
 ];
 ---
 
-<section id="contacto" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+<section id="contacto" class="py-20 bg-sky-50/90">
   <div class="container-personalizado mx-auto px-8">
     <!-- Header -->
     <div class="text-center mb-16">
@@ -36,16 +36,21 @@ const contactInfo = [
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-start overflow-hidden">
+    <div class="grid lg:grid-cols-2 gap-12 xs:max-w-[400px] items-start">
       <!-- Contact Form -->
       <div
-        class="bg-white rounded-xl md:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 border border-gray-100 w-full overflow-hidden"
+        class="bg-white rounded-xl md:rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 border border-gray-100"
       >
         <h3 class="text-2xl font-bold text-gray-900 mb-6">
           Envíanos un mensaje
         </h3>
 
-        <form id="contact-form" class="space-y-6">
+        <form
+          id="contact-form"
+          class="space-y-6 xs:max-w-0"
+          role="form"
+          aria-label="Formulario de contacto para EliteHome Invest"
+        >
           <!-- Grid para Name y Email -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Name -->
@@ -100,7 +105,7 @@ const contactInfo = [
                 id="phone"
                 name="phone"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none"
-                placeholder="+52 55 1234 5678"
+                placeholder="+51 999-999-999"
               />
             </div>
 
@@ -165,7 +170,7 @@ const contactInfo = [
       </div>
 
       <!-- Contact Information -->
-      <div class="space-y-8">
+      <div class="space-y-8 xs:max-w-0">
         <!-- Info Cards -->
         <div class="grid gap-4">
           {

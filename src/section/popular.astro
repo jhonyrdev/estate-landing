@@ -33,7 +33,7 @@ const properties = [
 ];
 ---
 
-<section class="bg-gradient-to-b from-white to-sky-50/30 py-20">
+<section class="bg-white py-15">
   <div class="container-personalizado mx-auto px-8">
     <!-- Header -->
     <div class="mb-12 text-center">
@@ -98,7 +98,11 @@ const properties = [
                   </div>
 
                   <!-- Book button -->
-                  <button class="card-btn">
+                  <button 
+                    class="card-btn"
+                    aria-label={`Ver detalles de ${property.title}`}
+                    type="button"
+                  >
                     Ver propiedad
                   </button>
                 </div>
@@ -126,8 +130,12 @@ const properties = [
                 <div class="card-overlay"></div>
 
                 <!-- Bookmark icon -->
-                <button class="bookmark-btn">
-                  <i class="fa-regular fa-bookmark text-white text-lg" />
+                <button 
+                  class="bookmark-btn"
+                  aria-label={`Guardar ${property.title} en favoritos`}
+                  type="button"
+                >
+                  <i class="fa-regular fa-bookmark text-white text-lg" aria-hidden="true" />
                 </button>
 
                 <!-- Content on image -->
@@ -158,7 +166,11 @@ const properties = [
                   </div>
 
                   <!-- Book button -->
-                  <button class="card-btn">
+                  <button 
+                    class="card-btn"
+                    aria-label={`Ver detalles de ${property.title}`}
+                    type="button"
+                  >
                     Ver propiedad
                   </button>
                 </div>
@@ -169,11 +181,15 @@ const properties = [
       </div>
 
       <!-- Carousel Indicators (Mobile only) -->
-      <div class="flex justify-center gap-2 mt-6 lg:hidden" id="carousel-indicators">
-        {properties.map((_, index) => (
+      <div class="flex justify-center gap-2 mt-6 lg:hidden" id="carousel-indicators" role="tablist" aria-label="Navegación de propiedades">
+        {properties.map((property, index) => (
           <button 
             class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
             data-index={index}
+            role="tab"
+            aria-label={`Ir a ${property.title}`}
+            aria-selected={index === 0 ? "true" : "false"}
+            type="button"
           />
         ))}
       </div>
@@ -181,7 +197,7 @@ const properties = [
 
     <!-- CTA -->
     <div class="mt-7 text-center">
-      <a href="#" class="cta-btn">
+      <a href="#" class="cta-btn md:rounded-full rounded-xl">
         Ver todas las propiedades
         <i class="fa-solid fa-arrow-right ml-2" />
       </a>
@@ -351,7 +367,6 @@ const properties = [
   .cta-btn {
     display: inline-flex;
     align-items: center;
-    border-radius: 9999px;
     background: linear-gradient(to right, #0ea5e9, #06b6d4);
     padding: 1rem 2rem;
     color: white;

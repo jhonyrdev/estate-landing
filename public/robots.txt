@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://elitehomestate.netlify.app/sitemap.xml
+
+# Excluir archivos privados o innecesarios
+Disallow: /api/
+Disallow: /admin/
